@@ -55,11 +55,11 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex justify-between  ">
-      <img className="w-44" src={LOGO} alt="logo" />
+    <div className="absolute  px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex flex-col  md:justify-between  md:flex-row  ">
+      <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
 
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {/* <img src='https://wallpapers.com/images/hd/netflix-profile-pictures-10-x-10-qo9h82134t9nv0j0.jpg' alt='user-icon' className='w-12 h-12'/> */}
          { showGptSearch && <select className="p-2 m-4 bg-gray-900 text-white rounded-lg " onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -81,7 +81,7 @@ const Header = () => {
           <img
             src={user.photoURL}
             alt="user-icon"
-            className="w-12 h-12 my-2 rounded-lg"
+            className=" hidden md:block w-12 h-12 my-2 rounded-lg"
           />
           <button className="font-bold p-1 text-white" onClick={handleSignOut}>
             (Sign out)
